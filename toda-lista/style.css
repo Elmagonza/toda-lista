@@ -60,6 +60,7 @@ h2{
     padding: 0.9em;
     border-radius:8px;
     background-color: var(--white);
+    padding: 1.7em 1em;
 
 }
 .agregar-tarea i{
