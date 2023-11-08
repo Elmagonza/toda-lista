@@ -7,10 +7,10 @@
 /*ROOT*/
 :root{
     --white: #fafafb;
-    --pink: #e743fc;
-    --blue-light:#c128f8;
-    --blue-dark:#01162d;
-    --green:#27ada8;
+    --pink:#F806CC;
+    --blue-light:#A91079;
+    --blue-dark:#2E0249;
+    --green:#570A57; 
 }
 /*BODY STYLE RESPONSIVE*/
 body{

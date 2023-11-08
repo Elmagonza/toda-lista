@@ -5,6 +5,8 @@ const botonEnter = document.getElementById("enter")
 
 //FUNCION AGREGAR TAREA
 
+
+
 function agregarTarea (tarea){
     const elemento =
         `<li class="elemento">
@@ -16,10 +18,13 @@ function agregarTarea (tarea){
     lista.insertAdjacentHTML("beforeend", elemento)
 }
 
+// Convertir la primera letra a mayúscula y el resto a minúscula
+//tarea = 
+
 botonEnter.addEventListener('click',()=>{
     const tarea = input.value
     if(tarea){
-        agregarTarea(tarea)
+       agregarTarea(tarea.charAt(0).toUpperCase() + tarea.slice(1).toLowerCase())
     }
     input.value=""
 })
