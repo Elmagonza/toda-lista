@@ -19,7 +19,8 @@ body{
     font-family: 'Prompt', sans-serif;
 }
 .container{
-    width: 68%;
+    width: 90%;
+    max-width: 660px;
     height: 90vh;
     margin: auto;
     display: flex;
@@ -77,6 +78,7 @@ h2{
 /*SECCION TAREA*/
 .seccion-tarea h3{
     color: var(--white);
+    letter-spacing: 1px;
 }
 .seccion-tarea li{
     display: flex;
@@ -88,6 +90,9 @@ h2{
     color: var(--white);
     font-size: 1.2em;
     margin: 0.5em 0;
+}
+.seccion-tarea li>p{
+    margin-left: 0.42em
 }
 .seccion-tarea i:hover{
     color: var(--pink);
