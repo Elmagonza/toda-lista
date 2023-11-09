@@ -6,15 +6,15 @@
 }
 /*ROOT*/
 :root{
-    --white: #fafafb;
-    --pink:#F806CC;
-    --blue-light:#A91079;
-    --blue-dark:#2E0249;
-    --green:#570A57; 
+    --first: #fafafb;
+    --second:#F806CC;
+    --third:#A91079;
+    --fourth:#2E0249;
+    --fifth:#570A57; 
 }
 /*BODY STYLE RESPONSIVE*/
 body{
-    background: linear-gradient(to bottom,var(--pink),var(--blue-dark));
+    background: linear-gradient(to bottom,var(--second),var(--fourth));
     height: 100vh;
     font-family: 'Prompt', sans-serif;
 }
@@ -31,21 +31,21 @@ body{
 /*PERFIL*/
 
 .titulo{
-    color: var(--white);
+    color: var(--first);
 }
 h2{
-    color: var(--white);
+    color: var(--first);
     letter-spacing: 1px;
 } 
 #fecha{
-    color: var(--white);
+    color: var(--first);
     padding: 3em 0 0.5em 0;
 }
 
 /*AGREGAR TAREA*/
 
 .agregar-tarea{
-    background-color: var(--white);
+    background-color: var(--first);
     border-radius: 15px;
     height:4em ;
     display: flex;
@@ -56,17 +56,17 @@ h2{
 .agregar-tarea input{
     width: 100%;
     height: 100%;
-    color: #F806CC;
-    border-color: var(--blue-dark);
+    color:var(--second);
+    border-color: var(--fourth);
     padding: 0.9em;
     border-radius:8px;
-    background-color: var(--white);
+    background-color: var(--first);
     padding: 1.7em 1em;
 
 }
 .agregar-tarea i{
     font-size: 3em;
-    color: var(--pink);
+    color: var(--second);
 }
 .agregar-tarea i:hover{
     transform: scale(1.1);
@@ -75,21 +75,21 @@ h2{
 }
 .agregar-tarea input::placeholder{
     font-size: 1.1em;
-    color: var(--pink);
+    color: var(--second);
 }
 /*SECCION TAREA*/
 .seccion-tarea h3{
-    color: var(--white);
+    color: var(--first);
     letter-spacing: 1px;
 }
 .seccion-tarea li{
     display: flex;
-    background: linear-gradient(to bottom,var(--blue-light), var(--blue-dark));
+    background: linear-gradient(to bottom,var(--third), var(--fourth));
     border-radius: 15px;
     padding: 1em;
     align-items: center;
     justify-content: space-between;
-    color: var(--white);
+    color: var(--first);
     font-size: 1.2em;
     margin: 0.5em 0;
 }
@@ -97,9 +97,9 @@ h2{
     margin-left: 0.42em
 }
 .seccion-tarea i:hover{
-    color: var(--pink);
+    color: var(--second);
 }
 .line-trough{
     text-decoration: line-through;
-    color: var(--green);
+    color: var(--fifth);
 }
