@@ -56,6 +56,7 @@ h2{
 .agregar-tarea input{
     width: 100%;
     height: 100%;
+    color: #F806CC;
     border-color: var(--blue-dark);
     padding: 0.9em;
     border-radius:8px;

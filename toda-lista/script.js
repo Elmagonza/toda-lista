@@ -28,3 +28,13 @@ botonEnter.addEventListener('click',()=>{
     }
     input.value=""
 })
+
+document.addEventListener('keyup',function(event){
+    if(event.key == 'Enter'){
+        const tarea = input.value
+        if(tarea){
+        agregarTarea(tarea.charAt(0).toUpperCase() + tarea.slice(1).toLowerCase())
+    }
+    input.value=""
+    }  
+})
