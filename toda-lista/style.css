@@ -6,11 +6,11 @@
 }
 /*ROOT*/
 :root{
-    --first: #fafafb;
-    --second:#F806CC;
-    --third:#A91079;
-    --fourth:#2E0249;
-    --fifth:#570A57; 
+    --first: #F2FFE9;
+    --second:#A6CF98;
+    --third:#557C55;
+    --fourth:#FA7070;
+    --fifth:#872341; 
 }
 /*BODY STYLE RESPONSIVE*/
 body{
@@ -99,7 +99,7 @@ h2{
 .seccion-tarea i:hover{
     color: var(--second);
 }
-.line-trough{
+.line-through{
     text-decoration: line-through;
-    color: var(--fifth);
+    color: var(--second);
 }

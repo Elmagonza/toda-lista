@@ -2,10 +2,12 @@ const fecha = document.getElementById("fecha")
 const lista = document.getElementById("lista")
 const input = document.getElementById("input")
 const botonEnter = document.getElementById("enter")
-const check = "fa-check-circle"
-const uncheck ="fa-circle"
+const check = "fa-regular fa-circle-check"
+const uncheck = "far fa-circle co"
 const lineThrough ="line-through"
 let id = 0
+
+const LIST=[]
 
 //FUNCION AGREGAR TAREA
 
@@ -20,27 +22,40 @@ function agregarTarea (tarea,id,realizado,eliminado){
 
     const elemento =
         `<li class="elemento">
-            <i id="${id}" class="far ${REALIZADO}" data="realizado"></i>
+            <i id="${id}" class=" ${REALIZADO}" data="realizado"></i>
             <p class="text ${LINE}">${tarea}</p>
             <i id="${id}" class="fas fa-trash de" data="eliminado"></i>
         </li>
         `
     lista.insertAdjacentHTML("beforeend", elemento)
 }
+//funcion tarea realizada
 
 function tareaRealizada(element){
-    element.classList.toogle(check)
-    element.classList.toogle(uncheck)
+    check.split(' ').forEach(cls => element.classList.toggle(cls))
+    uncheck.split(' ').forEach(cls => element.classList.toggle(cls))
+    element.parentNode.querySelector('.text').classList.toggle(lineThrough)
+    LIST[element.id].realizado = LIST[element.id].realizado ? false:true
 }
 
+//funcion tarea eliminada
 
-
+function tareaEliminada(element){
+    element.parentNode.parentNode.removeChild(element.parentNode)
+    LIST[element.id].eliminado = true
+}
 
 
 botonEnter.addEventListener('click',()=>{
     const tarea = input.value
     if(tarea){
        agregarTarea(tarea.charAt(0).toUpperCase() + tarea.slice(1).toLowerCase(),id,false,false)
+       LIST.push({
+            nombre: tarea,
+            id:id,
+            realizado: false,
+            eliminado:false
+       })
     }
     input.value=""
     id++
@@ -51,6 +66,12 @@ document.addEventListener('keyup',function(event){
         const tarea = input.value
         if(tarea){
         agregarTarea(tarea.charAt(0).toUpperCase() + tarea.slice(1).toLowerCase(),id,false,false)
+        LIST.push({
+            nombre: tarea,
+            id:id,
+            realizado: false,
+            eliminado:false
+       })
     }
     input.value=""
     }  
