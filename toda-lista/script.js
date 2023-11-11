@@ -5,13 +5,17 @@ const botonEnter = document.getElementById("enter")
 const check = "fa-regular fa-circle-check"
 const uncheck = "far fa-circle co"
 const lineThrough ="line-through"
-let id = 0
+let id 
+let LIST
 
-const LIST=[]
+
+//FUNCION FECHA
+
+const FECHA = new Date()
+fecha.innerHTML= FECHA.toLocaleDateString('es-AR',{weekday:'long',month:'short',day:'numeric'})
+
 
 //FUNCION AGREGAR TAREA
-
-
 
 function agregarTarea (tarea,id,realizado,eliminado){
 
@@ -29,16 +33,17 @@ function agregarTarea (tarea,id,realizado,eliminado){
         `
     lista.insertAdjacentHTML("beforeend", elemento)
 }
-//funcion tarea realizada
+//FUNCION TAREA REALIZADA
 
 function tareaRealizada(element){
     check.split(' ').forEach(cls => element.classList.toggle(cls))
     uncheck.split(' ').forEach(cls => element.classList.toggle(cls))
     element.parentNode.querySelector('.text').classList.toggle(lineThrough)
     LIST[element.id].realizado = LIST[element.id].realizado ? false:true
+    //console.log(LIST)
 }
 
-//funcion tarea eliminada
+//FUNCION TAREA ELIMINADA
 
 function tareaEliminada(element){
     element.parentNode.parentNode.removeChild(element.parentNode)
@@ -57,6 +62,7 @@ botonEnter.addEventListener('click',()=>{
             eliminado:false
        })
     }
+    localStorage.setItem('TODA',JSON.stringify(LIST))
     input.value=""
     id++
 })
@@ -73,18 +79,43 @@ document.addEventListener('keyup',function(event){
             eliminado:false
        })
     }
+    localStorage.setItem('TODA',JSON.stringify(LIST))
     input.value=""
-    }  
     id++
+    }  
+    
 })
 
 lista.addEventListener('click',function(event){
     const element = event.target
     const elementData = element.attributes.data.value
     if (elementData==='realizado'){
-        tareaRealizada(element)
+        if(LIST[element.id]) {
+            tareaRealizada(element)
+        } else {
+            console.log("El elemento con id no existe en la lista")
+        }
     }
     else if (elementData==='eliminado'){
         tareaEliminada(element)
     }
+    localStorage.setItem('TODA',JSON.stringify(LIST))
 })
+
+//LOCAL STORAGE GET ITEM
+let data = localStorage.getItem('TODA')
+if(data){
+    console.log(localStorage.getItem('TODA'))
+    LIST =JSON.parse(data)
+    id = LIST.length
+    cargarLista(LIST)
+} else{
+    LIST = []
+    id = 0
+}
+
+function cargarLista(DATA){
+    DATA.forEach(function(i){
+        agregarTarea(i.nombre,i.id,i.realizado,i.eliminado)
+    })
+}

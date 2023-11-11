@@ -33,7 +33,7 @@ body{
     bottom: 0;
     width: 100%;
     background-color: var(--fifth);
-    color: white;
+    color: var(--first);
     text-align: center;
   }
 
