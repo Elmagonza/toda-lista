@@ -105,7 +105,6 @@ lista.addEventListener('click',function(event){
 //LOCAL STORAGE GET ITEM
 let data = localStorage.getItem('TODA')
 if(data){
-    console.log(localStorage.getItem('TODA'))
     LIST =JSON.parse(data)
     id = LIST.length
     cargarLista(LIST)
